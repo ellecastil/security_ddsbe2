@@ -21,3 +21,23 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('/users',['uses' => 'UserController@getUsers']);
 });
 
+$router->get('/users', 'UserController@index');             //show all data
+$router->post('/users', 'UserController@addUser');          //add user to the database
+$router->get('/users/{id}', 'UserController@show');          //find user by its specific id
+$router->put('/users/{id}', 'UserController@update');       //put means all values in your table/usertable will/should be put value
+$router->patch('/users/{id}', 'UserController@update');       //update specific info
+$router->delete('/users/{id}', 'UserController@delete');    //delete record
+
+$router->get('login', 'UserController@showlogin');      //loginpage
+$router->post('validate', 'UserController@result');     //log in
+
+//loginpage
+// $router->get('login', [
+//     'as' => 'login', 'uses' => 'UserController@showlogin'
+// ]);
+
+//log in
+// $router->post('validate', [
+//     'as' => 'validate', 'uses' => 'UserController@result'
+// ]);
+
