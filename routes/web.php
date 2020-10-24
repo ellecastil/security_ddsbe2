@@ -31,13 +31,4 @@ $router->delete('/users/{id}', 'UserController@delete');    //delete record
 $router->get('login', 'UserController@showlogin');      //loginpage
 $router->post('validate', 'UserController@result');     //log in
 
-//loginpage
-// $router->get('login', [
-//     'as' => 'login', 'uses' => 'UserController@showlogin'
-// ]);
-
-//log in
-// $router->post('validate', [
-//     'as' => 'validate', 'uses' => 'UserController@result'
-// ]);
 
