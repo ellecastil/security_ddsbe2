@@ -32,26 +32,6 @@
             $user = User::all();
             return $this->successResponse($user);
         }
-
-        public function showlogin(){
-            return view('login');
-        }
-
-        public function result(){
-            
-            $username = $_POST["username"];
-            $password = $_POST["password"];
-
-            $login = app('db')->select("select * from tbluser where username='$username' and password ='$password'");
-                        
-            if(empty($login)){
-                return $this->errorResponse('User Does not Exists',Response::HTTP_NOT_FOUND);
-            }else{
-                echo '<script>alert("Successfully logged in!")</script>';
-                return view('login');
-            }
-
-        }
         
         public function addUser(Request $request){
             $rules =[

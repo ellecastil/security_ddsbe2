@@ -13,4 +13,8 @@
 
         public $timestamps = false;
         protected $primaryKey = 'id';
+
+        protected $hidden = [
+            'password'
+        ];
     }
